@@ -1,5 +1,5 @@
 CFLAGS = -Wall -Wextra -Werror
-CPPFLAGS = -I sorce -MMD
+CPPFLAGS = -I src -MMD
 DIR_GUARD = @mkdir -p $(@D)
 
 all: bin/geometry
@@ -13,20 +13,20 @@ bin/geometry: obj/inputread.o obj/circle.o obj/point.o obj/triangle.o obj/main.o
 obj/library.a: obj/circle.o obj/point.o obj/triangle.o
 	ar rcs $@ $^
 
-obj/inputread.o: sorce/geometry/inputread.c
+obj/inputread.o: src/geometry/inputread.c
 	$(DIR_GUARD)
 	gcc $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
 
-obj/circle.o: sorce/library/circle.c
+obj/circle.o: src/library/circle.c
 	gcc $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
 
-obj/point.o: sorce/library/point.c
+obj/point.o: src/library/point.c
 	gcc $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
 
-obj/triangle.o: sorce/library/triangle.c
+obj/triangle.o: src/library/triangle.c
 	gcc $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
 
-obj/main.o: sorce/geometry/main.c
+obj/main.o: src/geometry/main.c
 	gcc $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
 
 clean:
