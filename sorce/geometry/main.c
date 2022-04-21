@@ -21,8 +21,12 @@ int main()
         p.x = atof(strtok(NULL, delims));
         p.y = atof(strtok(NULL, delims));
         float radius = atof(strtok(NULL, delims));
+
+        float perimeter = calculateCirclePerimeter(radius);//вычисляем периметр круга
+        float area = calculateCircleArea(radius);//вычисляем площадь круга
+
        
-        CircleInfo(p.x, p.y,radius);
+        CircleInfo(p.x, p.y, radius, perimeter, area);// дополняем вывод периметром и площадью
 
     } else if (strcmp(token, "triangle") == 0) {//если треугольник
         printf("\n%s:\n", token);
@@ -37,7 +41,10 @@ int main()
             printf("Ошибка обработки первой/последней точки в треугольнике.\nПроверьте ввод данных.\n");
         }
 
-        TriangleInfo(points);
+        float perimeter = calculateTrianglePerimeter(points);//периметр треугольника
+        float area = calculateTriangleArea(points);//площадь треугольника
+
+        TriangleInfo(points, perimeter, area);//дополняем вывод!
 
     } else if (strcmp(token, "q") == 0) {
         return 0;
