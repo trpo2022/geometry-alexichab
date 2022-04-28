@@ -61,5 +61,5 @@ int main()
         getObject(i + 1, &objects[i]);
     }
 
-  return 0;
+    return 0;
 }

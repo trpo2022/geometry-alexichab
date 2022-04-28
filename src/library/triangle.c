@@ -39,11 +39,11 @@ void TriangleInfo(struct Triangle triangle) //дополняем вывод ин
     printf("\tpoints:\n");
     for (int i = 0; i < 3; i++) {
         printf("\t\t%d: (%.3f, %.3f)\n",
-            i + 1,
-            triangle.points[i].x,
-            triangle.points[i].y);
+               i + 1,
+               triangle.points[i].x,
+               triangle.points[i].y);
     }
     printf("\tperimeter = %.6f\n\tarea = %.6f\n\n",
-            calculateTrianglePerimeter(triangle.points),
-            calculateTriangleArea(triangle.points));
+           calculateTrianglePerimeter(triangle.points),
+           calculateTriangleArea(triangle.points));
 }
