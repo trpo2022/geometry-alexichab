@@ -3,7 +3,9 @@
 #include <math.h>
 #include <stdio.h>
 
-float calculateSide(struct Point point1, struct Point point2) //делаем подсчет сторон для функций периметра
+float calculateSide(
+        struct Point point1,
+        struct Point point2) //делаем подсчет сторон для функций периметра
 {
     float x1 = point1.x, x2 = point2.x;
     float y1 = point1.y, y2 = point2.y;
@@ -23,7 +25,8 @@ float calculateTrianglePerimeter(struct Point points[4]) //периметр тр
 
 float calculateTriangleArea(struct Point points[4]) //площадь треугольнкика
 {
-    float semiperimeter = calculateTrianglePerimeter(points) / 2; //подсчет полумериметра для подсчета площади
+    float semiperimeter = calculateTrianglePerimeter(points)
+            / 2; //подсчет полумериметра для подсчета площади
     float area = semiperimeter;
     for (int i = 0; i < 3; i++) {
         area *= semiperimeter - calculateSide(points[i], points[i + 1]);
@@ -36,11 +39,11 @@ void TriangleInfo(struct Triangle triangle) //дополняем вывод ин
     printf("\tpoints:\n");
     for (int i = 0; i < 3; i++) {
         printf("\t\t%d: (%.3f, %.3f)\n",
-                i + 1,
-                triangle.points[i].x,
-                triangle.points[i].y);
+            i + 1,
+            triangle.points[i].x,
+            triangle.points[i].y);
     }
-    printf("\tperimeter = %.6f\n\tarea = %.6f\n\n", 
+    printf("\tperimeter = %.6f\n\tarea = %.6f\n\n",
             calculateTrianglePerimeter(triangle.points),
             calculateTriangleArea(triangle.points));
 }
