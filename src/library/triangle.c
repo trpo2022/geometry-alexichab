@@ -2,6 +2,7 @@
 #include "point.h"
 #include <math.h>
 #include <stdio.h>
+
 float calculateSide(struct Point point1, struct Point point2)//делаем подсчет сторон для функций периметра
 {
     float x1 = point1.x, x2 = point2.x;
@@ -30,11 +31,16 @@ float calculateTriangleArea(struct Point points[4])//площадь треуго
     return sqrtf(area);
 }
 
-void TriangleInfo(struct Point points[4], float perimeter, float area)//дополняем вывод информации
+void TriangleInfo(struct Triangle triangle)//дополняем вывод информации
 {
     printf("\tpoints:\n");
-    for (int i = 0; i < 4; i++) {
-        printf("\t\t%d: (%.3f, %.3f)\n", i + 1, points[i].x, points[i].y);
+    for (int i = 0; i < 3; i++) {
+        printf("\t\t%d: (%.3f, %.3f)\n",
+                i + 1,
+                triangle.points[i].x,
+                triangle.points[i].y);
     }
-    printf("\tperimeter = %.3f\n\tarea = %.3f\n\n", perimeter, area);
+    printf("\tperimeter = %.6f\n\tarea = %.6f\n\n", 
+            calculateTrianglePerimeter(triangle.points),
+            calculateTriangleArea(triangle.points));
 }
