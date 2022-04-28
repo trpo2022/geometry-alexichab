@@ -3,17 +3,17 @@
 #include <math.h>
 #include <stdio.h>
 
-float calculateCirclePerimeter(float radius)//периметр круга
+float calculateCirclePerimeter(float radius) //периметр круга
 {
     return 2 * M_PI * radius;
 }
 
-float calculateCircleArea(float radius)//площадь круга
+float calculateCircleArea(float radius) //площадь круга
 {
     return M_PI * radius * radius;
 }
 
-void CircleInfo(struct Circle circle)//вывод дополняем площадью и периметром
+void CircleInfo(struct Circle circle) //вывод дополняем площадью и периметром
 {
     printf("\tcenter = (%.3f %.3f)\n\tradius = %.6f\n\tperimeter = "
            "%.6f\n\tarea = %.6f\n\n",
