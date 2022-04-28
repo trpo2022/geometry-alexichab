@@ -60,6 +60,5 @@ int main()
     for (int i = 0; i < 3; i++) {
         getObject(i + 1, &objects[i]);
     }
-
     return 0;
 }
