@@ -1,11 +1,11 @@
-#include "library/point.h"
-#include "library/objects.h"
 #include "inputread.h"
-#include "library/triangle.h"
 #include "library/circle.h"
+#include "library/objects.h"
+#include "library/point.h"
+#include "library/triangle.h"
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 void getObject(int i, object* obj)
 {
@@ -52,7 +52,6 @@ void getObject(int i, object* obj)
     }
     free(input);
 }
-
 
 int main()
 {
